@@ -1,0 +1,19 @@
+.link {
+  padding: 8px 12px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-yellow);
+  color: var(--color-charcoal);
+  font-family: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--elevation-shadow-2dp);
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fill, auto);
+  grid-column-gap: 4px;
+  align-items: center;
+  grid-auto-flow: column;
+}

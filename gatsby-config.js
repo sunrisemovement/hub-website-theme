@@ -5,7 +5,19 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-svg`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Material Icons`,
+          `Source Sans Pro:300,400,700,900`
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
