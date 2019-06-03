@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   height: 56.25vw;
-  max-height: max-content;
+  max-height: 60vh;
   min-height: min-content;
   display: grid;
   grid-template-columns: 24px auto minmax(0px, 960px) auto 24px;
