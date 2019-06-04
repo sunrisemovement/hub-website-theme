@@ -6,40 +6,32 @@
  */
 
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import styled from 'styled-components'
-
+import { graphql, useStaticQuery } from "gatsby"
 import Header from "./Header"
-
-import './layout.css'
+import Styles from './Layout.module.css'
 
 type Props = {
   children: React.ReactNode
 }
 
-const LayoutMain = styled.main`
-  height: calc(100% - 74px);
-  position: relative;
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
 `
 
-const Layout = ({ children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
-      </>
-    )}
-  />
-)
+const Layout = ({ children }: Props) => {
+  const data = useStaticQuery(query)
+  return (
+    <>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main className={Styles.main}>{children}</main>
+    </>
+  )
+}
 
 export default Layout

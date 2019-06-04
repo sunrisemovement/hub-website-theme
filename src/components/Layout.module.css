@@ -1,5 +1,7 @@
 :root {
   --color-yellow: #ffde16;
+  --color-magenta: #8f0d56;
+  --color-orange: #fd9014;
   --color-charcoal: #33342e;
   --color-charcoal-dark: #12130D;
   --color-willow: #e3eddf;
@@ -42,5 +44,10 @@ body {
   background-color: var(--color-charcoal-dark);
   color: var(--color-willow);
   height: 100%;
+  position: relative;
+}
+
+.main {
+  height: calc(100% - 74px);
   position: relative;
 }

@@ -11,6 +11,7 @@
   grid-template-rows: auto 1fr auto auto auto;
   grid-row-gap: 24px;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .heroHubName {
@@ -68,19 +69,30 @@
 /*#region ABOUT SECTION */
 
 .aboutSection {
-  padding: 0 24px;
-  margin: 40px 0;
+  padding: 20px 24px;
 }
 
 .aboutContainer {
   max-width: 960px;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+}
+
+.aboutHeading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  grid-row: 1;
 }
 
 .aboutText {
   font-size: 24px;
   padding: 24px;
   font-family: var(--font-sans);
+  grid-row: 2;
 }
 
 /*#endregion */
@@ -88,8 +100,7 @@
 /*#region BLOG SECTION */
 
 .blogSection {
-  padding: 0 24px;
-  margin: 40px 0;
+  padding: 20px 24px;
 }
 
 .blogCardsContainer {
@@ -98,13 +109,22 @@
   width: 100%;
   display: grid;
   grid-template-columns: 3fr minmax(200px, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
   grid-column-gap: 24px;
+  grid-row-gap: 16px;
   position: relative;
 }
 
-.blogLatestPostCard {
+.blogHeading {
+  margin: 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 900;
   grid-row: 1;
+}
+
+.blogLatestPostCard {
+  grid-row: 2;
   grid-column: 1 / span 1;
 }
 
@@ -142,7 +162,7 @@
 }
 
 .blogSeeAll {
-  grid-row: 1;
+  grid-row: 2;
   grid-column: 2 / span 1;
 }
 
@@ -157,10 +177,8 @@
 /*#region EVENTS SECTION */
 
 .eventsSection {
-  margin: 40px 0;
-  padding: 0 24px;
-  max-height: 100vh;
-  height: 600px;
+  padding: 20px 24px;
+  height: 100vh;
   position: relative;
 }
 
@@ -168,25 +186,77 @@
   margin: 0;
   font-size: 24px;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .eventsContainer {
   max-width: 960px;
-  overflow: hidden;
   position: relative;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 6fr 4fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto minmax(0, 1fr);
   grid-column-gap: 16px;
-  grid-row-gap: 16px;height: 100%;
+  grid-row-gap: 16px;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
 }
 
 .eventsCalendar {
   grid-column: 1;
   grid-row: 2;
   position: relative;
+}
+
+.eventsDetail {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  min-height: 0;
+  height: 100%;
   overflow: hidden;
+}
+
+.eventsDetailLayout {
+  display: grid;
+  grid-template-rows: 296px auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.eventsDetailMap {
+  grid-row: 1;
+}
+
+.eventsDetailContent {
+  grid-row: 2;
+  display: grid;
+  padding: 16px;
+  grid-template-rows: auto auto auto 1fr;
+  grid-row-gap: 8px;
+  overflow: auto;
+}
+
+.eventsDetailName {
+  font-size: 24px;
+  grid-row: 1;
+}
+
+.eventsDetailLocation {
+  font-size: 18px;
+  grid-row: 2;
+}
+
+.eventsDetailTime {
+  font-size: 18px;
+  grid-row: 3;
+}
+
+.eventsDetailDescription {
+  font-size: 18px;
+  grid-row: 4;
 }
 
 /*#endregion */
