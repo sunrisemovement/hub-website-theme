@@ -1,7 +1,7 @@
 language: node_js
 node_js: 12
 cache: npm
-script: npx gatsby build --prefix-paths
+script: npm run build
 deploy:
   provider: pages
   skip_cleanup: true
