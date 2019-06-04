@@ -39,7 +39,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run build-setup-env && npm run build-compile",
+    "build-compile": "gatsby build",
+    "build-setup-env": "echo \"MAPBOX_TOKEN=$MAPBOX_TOKEN\" > .env.production",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
